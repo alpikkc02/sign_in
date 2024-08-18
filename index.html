@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>My PlanET</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="hero">
+            <div class="head_hero">
+                <img src="./assets/attribute/Logo My PlanEt.png" alt="">
+                <p>Selamat Datang di <br><strong>My PlanET</strong></p>
+            </div>
+            <div class="slogan">
+                <p>Seamless Events, Seamless Solutions</p>
+            </div>
+        </div>
+        <div class="opsi_login-regs" id="opsiLoginRegs" >
+            <div class="container_opsi_login">
+                <h2>MASUK</h2>
+                <div class="opsi_login" id="opsiLogin">
+                    <button type="button" onclick="showForm('formLoginUser')">User / Event Organizer</button>
+                    <button type="button" onclick="showForm('formLoginVendor')">Vendor</button>
+                </div>
+            </div>
+            <div class="container_opsi_regs" id="opsiDaftar">
+                <h2>DAFTAR</h2>
+                <div class="opsi_login">
+                    <button type="button" onclick="showFormRegs('formRegsUser')">User / Event Organizer</button>
+                    <button type="button" onclick="showFormRegs('formRegsVendor')">Vendor</button>
+                </div>
+            </div>
+        </div>
+        <form id="formLoginUser" class="form_user" action="" method="post">
+            <h2>MASUK</h2>
+            <div class="input_account" id="inputAccount">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"  placeholder="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="password" required>
+                <input type="submit" value="LOG IN">
+            </div>
+            <div class="regs_forget-password">
+                <div class="regs">
+                    <a href="#">Daftarkan Akun Baru</a>
+                </div>
+                <div class="forget_password">            
+                    <a href="#">Lupa Password?</a>
+                </div>
+            </div>
+            <p>atau masuk dengan akun:</p>
+            <div class="reg_sso">
+                <button type="button" onclick="loginGoogle()"><i class="fa-brands fa-google"></i>Masuk dengan Google</button>
+                <button type="button" onclick="loginFacebook()"><i class="fa-brands fa-facebook-f"></i>Masuk dengan Facebook</button>
+                <button type="button" onclick="loginTwitter()"><i class="fa-brands fa-twitter"></i>Masuk dengan Twitter</button>
+            </div>
+        </form>
+        <form id="formLoginVendor" class="form_vendor" action="" method="post">
+            <h2>MASUK</h2>
+                <div class="input_account">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username"  placeholder="username" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="password" required>
+                    <input type="submit" value="LOG IN">
+                    <div class="regs_forget-password">
+                        <div class="regs">
+                            <a href="#">Daftarkan Akun Baru</a>
+                        </div>
+                        <div class="forget_password">            
+                            <a href="#">Lupa Password?</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="reg_sso">
+                    <p>atau masuk dengan akun:</p>
+                    <button type="button" onclick="loginGoogle()"><i class="fa-brands fa-google"></i>Masuk dengan Google</button>
+                    <button type="button" onclick="loginFacebook()"><i class="fa-brands fa-facebook-f"></i>Masuk dengan Facebook</button>
+                    <button type="button" onclick="loginTwitter()"><i class="fa-brands fa-twitter"></i>Masuk dengan Twitter</button>
+                </div>
+        </form>
+        <form id="formRegsUser" class="form_regs_user" action="" method="post">
+            <h2>DAFTAR</h2>
+            <div class="container_regs1">
+                <div class="input_account_user" id="inputAccount">
+                    <div class="container_regs_user_1">
+                        <label for="name">Nama:</label>
+                        <input type="text" id="name" name="name" placeholder="nama" required>
+                        <label for="date">Tanggal Lahir</label>
+                        <input type="date" id="date" name="date" required>
+                        <label for="text">Instansi / Perusahaan</label>
+                        <input type="text" id="text" name="text" placeholder="instansi / perusahaan" required>
+                    </div>
+                    <div class="container_regs_user_2">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="email" required>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username"  placeholder="username" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="password" required>
+                    </div>
+                </div>
+                <div class="reg_sso">
+                    <input type="submit" value="DAFTAR">
+                    <p>atau daftar dengan:</p>
+                    <button type="button" onclick="loginGoogle()"><i class="fa-brands fa-google"></i>Masuk dengan Google</button>
+                    <button type="button" onclick="loginFacebook()"><i class="fa-brands fa-facebook-f"></i>Masuk dengan Facebook</button>
+                    <button type="button" onclick="loginTwitter()"><i class="fa-brands fa-twitter"></i>Masuk dengan Twitter</button>
+                </div>
+            </div>
+        </form>
+        <form id="formRegsVendor" class="form_regs_vendor" action="" method="post">
+            <h2>DAFTAR</h2>
+            <div class="container_regs1">
+                <div class="input_account_vendor" id="inputAccountVendor">
+                    <div class="container_regs_user_1">
+                        <label for="name">Nama Vendor</label>
+                        <input type="text" id="name" name="name" placeholder="Nama Vendor" required>
+                        <label for="date">Tanggal Berdiri</label>
+                        <input type="date" id="date" name="date" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="email" required>
+                        <label for="jenisVendor">Jenis Vendor</label>
+                        <select name="jenisVendor" id="jenisVendor">
+                            <option value="" disabled selected></option>
+                            <option value="catering">Catering</option>
+                            <option value="decoration">Dekorasi</option>
+                            <option value="sound-lighting">Sound System & Lighting</option>
+                            <option value="photography-videography">Photography & Videography</option>
+                            <option value="venue">Venue</option>
+                            <option value="rental-equipment">Rental Equipment</option>
+                            <option value="transportation">Transportation</option>
+                        </select>    
+                    </div>
+                    <div class="container_regs_user_2">
+                        <label for="phone">Nomor Telepon:</label>
+                        <input type="text" id="phone" name="phone" placeholder="Nomor Telepon" required>
+                        <label for="name" >Nama Owner</label>
+                        <input type="text" id="name_owner" name="name_vendor" placeholder="Nama Owner">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username"  placeholder="username" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="password" required>
+                    </div>
+                </div>
+                <div class="reg_sso">
+                        <input type="submit" value="DAFTAR">
+                        <p>atau masuk dengan akun:</p>
+                    <button type="button" onclick="loginGoogle()"><i class="fa-brands fa-google"></i>Masuk dengan Google</button>
+                    <button type="button" onclick="loginFacebook()"><i class="fa-brands fa-facebook-f"></i>Masuk dengan Facebook</button>
+                    <button type="button" onclick="loginTwitter()"><i class="fa-brands fa-twitter"></i>Masuk dengan Twitter</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function showForm(formId) {
+
+            document.getElementById('opsiLoginRegs').style.display = 'none';
+
+            document.getElementById('formRegsUser').style.display = 'none';
+            document.getElementById('formRegsVendor').style.display = 'none';
+            
+            document.getElementById(formId).style.display = 'flex';
+
+            var inputAccount = document.getElementById('inputAccount');
+            if (inputAccount) {
+                inputAccount.style.marginRight = '0';
+                inputAccount.style.borderRight = 'none'
+            }
+
+            var container = document.getElementById('container');
+            if (container) {
+                container.style.padding = '2vw';
+                container.style.gap = '2vw';
+                container.style.height = "auto"
+            }
+        }
+
+        function showFormRegs(formId) {
+
+            document.getElementById('opsiLoginRegs').style.display = 'none';
+
+            document.getElementById('formRegsUser').style.display = 'none';
+            document.getElementById('formRegsVendor').style.display = 'none';
+            
+            document.getElementById(formId).style.display = 'flex';
+
+            var container = document.getElementById('container');
+            if (container) {
+                container.style.flexDirection = 'column';
+                container.style.padding = '2vw';
+                container.style.gap = '2vw';
+                container.style.marginBottom = '2vw';
+                container.style.height = "auto"
+            }
+            
+            var inputAccount = document.getElementById('inputAccount');
+            if (inputAccount) {
+                inputAccount.style.marginRight = '0';
+                inputAccount.style.borderRight = 'none'
+            }
+        }
+    </script>
+</body>
+</html>
+
